@@ -30,8 +30,7 @@ while contadorIntentos<intentosPermitidos:
         print("Cuidado! Credenciales incorrectas")
         print(f"Intento número: {contadorIntentos}")
         print(f"Intentos restantes: {intentosRestantes}\n")
-    if contadorIntentos == intentosPermitidos:
-        print("Has superado el número máximo de intentos")
         
-
-#Necesito mensajes que indiquen el numero de intentos que llevo y cuantos me quedan
+    if contadorIntentos == intentosPermitidos:
+        print("Has superado el número máximo de intentos!")
+        

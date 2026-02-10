@@ -1,17 +1,62 @@
 
-contador=0
-'''while contador<5:
-    contador=contador+1
-    print(f"Estoy en la vuelta: {contador}")'''
+from controlDeInventario import lista_asesores, autenticar_usuario,calcular_promedio,clasificar_promedio,crear_mediciones_aleatorias
+
+
+
+#1
+# CREACION DE ASESORES
+print("\n" + "="*40)
+print("👥 Inicio del proceso de creación de asesores")
+print("="*40 + "\n")
+
+
+asesores_registrados = lista_asesores()
+
+# MOSTRAR ASESORES
+print("\n✅ Asesores creados correctamente\n")
+
+print("👥 Asesores registrados:")
+for asesor in asesores_registrados:
+    print(f"ID: {asesor['id']} - Nombre: {asesor['nombre']}")
     
 
-for _ in range(1,6):
-     diccionario={}
-     diccionario["id"]=int(input("Digita el id del empleado: "))
-     diccionario["nombres"]=input("Digita los nombres del empleado: ")
-     diccionario["documento"]=input("digita el documento de identidad del empleado: ")
-     diccionario["correo"]=input("digita el correo del empleado: ")
-     diccionario["contraseña"]=input("digita la contraseña: ")
+#2 AUTENTICACION DE USUARIOS
+
+print("\n" + "="*40)
+print("➡️  Iniciando autenticación del usuario")
+print("="*40 + "\n")
+correoBD = "correo@gmail.com"
+contraseñaBD = "admin123"
+
+todoSalioBien = autenticar_usuario(correoBD, contraseñaBD, 3)
+
+#3 Promedio 
+
+mediciones = crear_mediciones_aleatorias()
+promedio = calcular_promedio(mediciones)
+estado = clasificar_promedio(promedio)
+
+print("\n" + "="*40)
+print("➡️  Iniciando calculo de promedio")
+print("="*40 + "\n")
+print(f"📊 Promedio de rotación: {promedio:.2f}")
+print("\n" + "="*40)
+print("➡️  Clasificación de la operación")
+print("="*40 + "\n")
+print(f"📌 Estado de la operación: {estado}\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
