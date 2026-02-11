@@ -1,24 +1,24 @@
-import random
+import random 
 
-#Registro de 5 asesores de tienda
-def lista_asesores(cantidad=5):
-    asesores =[]
+#Registro de 5 operadores
+def lista_operadores(cantidad=5):
+    operadores =[]
     for i in range(cantidad):
-        asesor = {}
-        asesor["id"] = i + 1
-        asesor["nombre"] = input(f"Nombre del asesor {i+1}: ")
-        asesores.append(asesor)
-    return asesores
+        operador = {}
+        operador["id"] = i + 1
+        operador["nombre"] = input(f"Nombre del operador {i+1}: ")
+        operadores.append(operador)
+    return operadores
 
 #Validacion de loguin 
-def autenticar_usuario(correoRegistrado,contraseñaRegistrada,numeroIntentos):
+def autenticar_operador(correoRegistrado,contraseñaRegistrada,numeroIntentos):
     for intento in range(1,numeroIntentos + 1):  #“Haz esto varias veces, contando los intentos uno por uno”.
         correo=input("Digita tu correo: ")
         contraseña=input("Digita tu contraseña: ")
         if correo==correoRegistrado and contraseña==contraseñaRegistrada:
         
-            print("\n✅ Autenticación exitosa")
-            print(" Bienvenido al sistema")
+            print("\n✅ Acceso exitoso")
+            print(" Bienvenido al sistema Metro ")
            
             return True
         else:
@@ -33,10 +33,10 @@ def autenticar_usuario(correoRegistrado,contraseñaRegistrada,numeroIntentos):
     return False
 
 # mediciones
-def crear_mediciones_aleatorias(cantidad=100):
+def crear_mediciones_aleatorias_metro(cantidad=500):
     mediciones = []
     for _ in range(cantidad):
-        valor = random.randint(40, 500)
+        valor = random.randint(50, 300)
         mediciones.append(valor)
     return mediciones
 
@@ -49,10 +49,10 @@ def calcular_promedio(mediciones):
     promedio=suma/len(mediciones)
     return promedio
 
-def clasificar_promedio(promedioMedicion):
-    if promedioMedicion <= 250:
-        return " Baja rotación: revisar estrategia de ventas"
-    elif promedioMedicion <= 400:
-        return " Rotación normal: operación estable"
+def clasificar_promedio_metro(promedioMedicion):
+    if promedioMedicion <= 100:
+        return " demora crítica"
+    elif promedioMedicion <= 300:
+        return "operación normal"
     else:
-        return " Alta rotación: se requiere reabastecimiento"
+        return " congestión severa que exige activar plan de contingencia"
